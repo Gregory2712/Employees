@@ -1,0 +1,48 @@
+﻿@model Employees.Models.Employee
+
+@{
+    ViewBag.Title = "Details of Employee";
+}
+
+<h2>Details of employee</h2>
+
+<div><a href="~/Home">Back to List</a></div>
+
+<hr />
+
+@using (Html.BeginForm("DetailsEmployee", "Home"))
+    
+{
+    <div class="form-group">
+        <label>First name | </label>
+        @Html.DisplayFor(m => m.FirstName)
+
+    </div>
+
+    <div class="form-group">
+        <label>Surname | </label>
+        @Html.DisplayFor(m => m.LastName)
+
+    </div>
+
+    <div class="form-group">
+        <label>Phone | </label>
+        @Html.DisplayFor(m => m.Phone)
+
+    </div>
+
+    <div class="form-group">
+        <label>Email | </label>
+        @Html.DisplayFor(m => m.Email)
+
+    </div>
+    <div><hr /></div>
+    <div>
+        @Html.ActionLink("Edit", "EditEmployee", new { id = Model.Id }) |
+        
+        @Html.ActionLink("Delete", "DeleteEmployee", new { id = Model.Id })
+    </div>
+
+    
+}
+
